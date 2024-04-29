@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -11,5 +12,7 @@ func main() {
 	r := http.NewServeMux()
 	routes.PoRoutes(r)
 	http.Handle("/", r)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	port := 8080
+	log.Println("Starting server on port " + fmt.Sprint(port) + "\r")
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", port), nil))
 }
