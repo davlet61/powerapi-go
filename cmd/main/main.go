@@ -9,6 +9,11 @@ import (
 )
 
 func main() {
+	// appKey := ""
+	// clientKey := ""
+	// encodedKeys := controllers.KeysToBase64(appKey, clientKey)
+	// controllers.GetTokens(encodedKeys)
+
 	r := http.NewServeMux()
 	routes.PoRoutes(r)
 	http.Handle("/", r)
